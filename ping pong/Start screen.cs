@@ -18,7 +18,7 @@ namespace ping_pong
             flashing_light_tick(this,new EventArgs());//changes text to be random multi colour only ONCE
         }
         public static string gamemode = string.Empty;//stores the gamemode the user has chosen to play
-        public static bool soundon = true;//is used to check whether sound is on
+        public static bool soundon { get { return false; } set {  } }//is used to check whether sound is on
         public static bool flash = false;
         private void infinitemode_btn_Click(object sender, EventArgs e)//if the user presses the button to play infinitely
         {
