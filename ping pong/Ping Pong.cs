@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Windows.Input;
 //To do:
 //Add vs. AI mode
+//Fix keyboard controls so each key can be pressed independently
 namespace ping_pong
 {
     public partial class Ping : Form
