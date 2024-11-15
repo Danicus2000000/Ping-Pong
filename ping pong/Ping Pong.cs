@@ -72,36 +72,6 @@ namespace ping_pong
         }
         private void delay_Tick(object sender, EventArgs e)
         {
-            #region keyboard controls
-            if (Keyboard.IsKeyDown(Key.W) && delayp1.Enabled == true)//if the user wants to move p1 bat upwards
-            {
-                if (racket.Top >= playspace.Top)// if the playspace boundary has not been reached
-                {
-                    racket.Top = racket.Top - 10;//moves bat
-                }
-            }
-            if (Keyboard.IsKeyDown(Key.S) && delayp1.Enabled == true)//if the user wants to move p1 bat downwards
-            {
-                if (racket.Bottom <= playspace.Bottom)//if the playsapce boundary has not been reached
-                {
-                    racket.Top = racket.Top + 10;//moves bat
-                }
-            }
-            if (Keyboard.IsKeyDown(Key.Up) && delayp1.Enabled == true)//if the user wants to move p2 bat upwards
-            {
-                if (racketp2.Top >= playspace.Top)//if the playspace boundary has not been reached
-                {
-                    racketp2.Top = racketp2.Top - 10;//moves bat
-                }
-            }
-            if (Keyboard.IsKeyDown(Key.Down) && delayp1.Enabled == true)//if the user wants to move p2 bat downwards
-            {
-                if (racketp2.Bottom <= playspace.Bottom)//if the playspace boundary has not been met
-                {
-                    racketp2.Top = racketp2.Top + 10;//moves bat
-                }
-            }
-            #endregion
 
             #region Checking for points game complete
             if (Start_screen.gamemode == "points")//if the user is playing points mode
@@ -213,6 +183,37 @@ namespace ping_pong
 
         private void Ping_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)//if the user presses a key
         {
+            #region keyboard controls
+            if (e.KeyCode == Keys.W && delayp1.Enabled == true)//if the user wants to move p1 bat upwards
+            {
+                if (racket.Top >= playspace.Top)// if the playspace boundary has not been reached
+                {
+                    racket.Top = racket.Top - 10;//moves bat
+                }
+            }
+            if (e.KeyCode == Keys.S && delayp1.Enabled == true)//if the user wants to move p1 bat downwards
+            {
+                if (racket.Bottom <= playspace.Bottom)//if the playsapce boundary has not been reached
+                {
+                    racket.Top = racket.Top + 10;//moves bat
+                }
+            }
+            if (e.KeyCode == Keys.Up && delayp1.Enabled == true)//if the user wants to move p2 bat upwards
+            {
+                if (racketp2.Top >= playspace.Top)//if the playspace boundary has not been reached
+                {
+                    racketp2.Top = racketp2.Top - 10;//moves bat
+                }
+            }
+            if (e.KeyCode == Keys.Down && delayp1.Enabled == true)//if the user wants to move p2 bat downwards
+            {
+                if (racketp2.Bottom <= playspace.Bottom)//if the playspace boundary has not been met
+                {
+                    racketp2.Top = racketp2.Top + 10;//moves bat
+                }
+            }
+            #endregion
+
             if (e.KeyCode==Keys.Escape)//closes when user presses esc
             {
                 System.Windows.Forms.Cursor.Show();//renables user's cursor in forms
